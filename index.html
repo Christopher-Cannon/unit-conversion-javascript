@@ -10,25 +10,99 @@
 </head>
 <body>
   <header class="page-header">
-    <h1>Unit Conversion Suite</h1>
+    <h1>Unit Conversion</h1>
 
-    <input type="text" name="filter" id="txt-filter" placeholder="Filter tools">
+    <input type="text" name="filter" id="inputFilter" placeholder="Filter tools">
   </header>
 
   <section class="page-section">
     <h2>Distance</h2>
+
+    <p>Metric</p>
+
+    <input type="text" name="distanceMetric" id="distanceMetric">
+
+    <select name="selectDistanceUnitsMetric" id="selectDistanceUnitsMetric">
+      <option value="distanceKilometres">Kilometres</option>
+      <option value="distanceMetres">Metres</option>
+    </select>
+
+    <p>Imperial</p>
+
+    <input type="text" name="distanceImperial" id="distanceImperial">
+
+    <select name="selectDistanceUnitsImperial" id="selectDistanceUnitsImperial">
+      <option value="distanceMiles">Miles</option>
+      <option value="distanceFeet">Feet</option>
+    </select>
   </section>
 
   <section class="page-section">
     <h2>Weight</h2>
+
+    <p>Metric</p>
+    
+    <input type="text" name="weightMetric" id="weightMetric">
+    
+    <select name="selectWeightUnitsMetric" id="selectWeightUnitsMetric">
+      <option value="weightKilograms">Kilograms</option>
+      <option value="weightGrams">Grams</option>
+    </select>
+    
+    <p>Imperial</p>
+    
+    <input type="text" name="weightImperial" id="weightImperial">
+    
+    <select name="selectWeightUnitsImperial" id="selectWeightUnitsImperial">
+      <option value="weightPounds">Pounds</option>
+      <option value="weightOunces">Ounces</option>
+    </select>
   </section>
 
   <section class="page-section">
     <h2>Speed</h2>
+
+    <p>Metric</p>
+    
+    <input type="text" name="speedMetric" id="speedMetric">
+    
+    <select name="selectSpeedUnitsMetric" id="selectSpeedUnitsMetric">
+      <option value="speedKMH">Kilometres per hour</option>
+      <option value="speedMPS">Metres per second</option>
+    </select>
+    
+    <p>Imperial</p>
+    
+    <input type="text" name="speedImperial" id="speedImperial">
+    
+    <select name="selectSpeedUnitsImperial" id="selectSpeedUnitsImperial">
+      <option value="speedMPH">Miles per hour</option>
+      <option value="speedFPS">Feet per second</option>
+    </select>
   </section>
 
   <section class="page-section">
     <h2>Temperature</h2>
+
+    <p>From</p>
+    
+    <input type="text" name="temperatureInput" id="temperatureInput">
+    
+    <select name="selectTemperatureUnitsInput" id="selectTemperatureUnitsInput">
+      <option value="temperatureCelsius">Celsius</option>
+      <option value="temperatureFahrenheit">Fahrenheit</option>
+      <option value="temperatureKelvin">Kelvin</option>
+    </select>
+    
+    <p>To</p>
+    
+    <input type="text" name="temperatureOutput" id="temperatureOutput" disabled>
+    
+    <select name="selectTemperatureUnitsOutput" id="selectTemperatureUnitsOutput">
+      <option value="temperatureFahrenheit">Fahrenheit</option>
+      <option value="temperatureCelsius">Celsius</option>
+      <option value="temperatureKelvin">Kelvin</option>
+    </select>
   </section>
 </body>
 </html>

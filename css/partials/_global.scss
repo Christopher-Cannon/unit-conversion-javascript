@@ -13,25 +13,35 @@ button {
   @include font-size($base-font-size);
 }
 
-input {
+input,
+select {
   border: 1px solid colour(black);
   border-radius: $radius;
   outline: none;
   padding: 0.5rem;
 }
 
+p {
+  margin: 0.5rem 0;
+}
+
 .page-header {
   border-bottom: 2px solid colour(black);
   display: flex;
 
+  @include mq-min-max($small, $medium) {
+    input {
+      @include center-block(60%, 0);
+    }
+  }
+
   @include mq-max($medium) {
     flex-direction: column;
-    margin: auto 1rem;
-
+    
     h1 {
       margin-bottom: 1rem;
     }
-
+    
     h1, input {
       text-align: center;
     }
@@ -39,7 +49,7 @@ input {
   
   @include mq-min($medium) {
     @include center-block(860px, 0);
-
+    
     justify-content: space-between;
     align-items: center;
   }
@@ -48,12 +58,23 @@ input {
 .page-header,
 .page-section {
   padding: 1rem 0;
-
-  @include mq-max($medium) {
-    margin: auto 1rem;
-  }
   
   @include mq-min($medium) {
     @include center-block(860px, 0);
+  }
+
+  @include mq-max($small) {
+    margin: auto 1rem;
+  }
+}
+
+.page-section {
+  @include mq-max($medium) {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @include mq-min-max($small, $medium) {
+    @include center-block(60%, 0);
   }
 }

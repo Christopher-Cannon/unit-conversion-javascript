@@ -15,21 +15,31 @@ button {
   font-size: calculateRem(20px);
 }
 
-input {
+input,
+select {
   border: 1px solid #1a1a1a;
   border-radius: 3px;
   outline: none;
   padding: 0.5rem;
 }
 
+p {
+  margin: 0.5rem 0;
+}
+
 .page-header {
   border-bottom: 2px solid #1a1a1a;
   display: flex;
 }
+@media screen and (min-width: 500px) and (max-width: 899px) {
+  .page-header input {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
 @media screen and (max-width: 899px) {
   .page-header {
     flex-direction: column;
-    margin: auto 1rem;
   }
   .page-header h1 {
     margin-bottom: 1rem;
@@ -51,16 +61,29 @@ input {
 .page-section {
   padding: 1rem 0;
 }
-@media screen and (max-width: 899px) {
-  .page-header,
-.page-section {
-    margin: auto 1rem;
-  }
-}
 @media screen and (min-width: 900px) {
   .page-header,
 .page-section {
     margin: 0 auto;
     width: 860px;
+  }
+}
+@media screen and (max-width: 499px) {
+  .page-header,
+.page-section {
+    margin: auto 1rem;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .page-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 899px) {
+  .page-section {
+    margin: 0 auto;
+    width: 60%;
   }
 }/*# sourceMappingURL=style.css.map */
