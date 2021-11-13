@@ -10,3 +10,27 @@ const kelvinToCelsius = (kelvin) => { return kelvin - 273.15 };
 const fahrenheitToKelvin = (fahrenheit) => { return (fahrenheit + 459.67) / 1.8 };
 
 const kelvinToFahrenheit = (fahrenheit) => { return fahrenheit * 1.8 - 459.67 };
+
+const pageSections = {
+  distance: "sectionDistance",
+  weight: "sectionWeight",
+  speed: "sectionSpeed",
+  temperature: "sectionTemperature"
+};
+
+// Show/hide sections depending on the value entered into the filter input
+const inputFilter = document.querySelector("#inputFilter");
+
+inputFilter.addEventListener("input", function(event) {
+  let input = event.target.value.toLowerCase();
+
+  for (const key in pageSections) {
+    const section = document.querySelector("#" + pageSections[key]);
+
+    if (!key.startsWith(input)) {
+      section.classList.add("hide");
+    } else {
+      section.classList.remove("hide");
+    }
+  }
+});

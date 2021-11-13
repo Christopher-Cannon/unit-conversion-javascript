@@ -90,4 +90,8 @@ p {
     margin: 0 auto;
     width: 60%;
   }
+}
+
+.hide {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
