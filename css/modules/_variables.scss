@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+$font-body: 'Open Sans', sans-serif;
+
+$base-font-size: 20px;
+
+$small: 500px;
+$medium: 900px;
+$large: 1200px;
+
+$radius: 3px;
+$transition: 0.15s;
+
+$colours: (
+  accent: hsl(83, 72%, 57%),
+  white: hsl(0, 0%, 98%),
+  light-grey: hsl(0, 0%, 85%),
+  grey: hsl(0, 0%, 40%),
+  dark-grey: hsl(0, 0%, 20%),
+  black: hsl(0, 0%, 10%),
+);

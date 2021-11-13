@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: $font-body;
+  @include font-size($base-font-size);
+}
+
+input {
+  border: 1px solid colour(black);
+  border-radius: $radius;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.page-header {
+  border-bottom: 2px solid colour(black);
+  display: flex;
+
+  @include mq-max($medium) {
+    flex-direction: column;
+    margin: auto 1rem;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    h1, input {
+      text-align: center;
+    }
+  }
+  
+  @include mq-min($medium) {
+    @include center-block(860px, 0);
+
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.page-header,
+.page-section {
+  padding: 1rem 0;
+
+  @include mq-max($medium) {
+    margin: auto 1rem;
+  }
+  
+  @include mq-min($medium) {
+    @include center-block(860px, 0);
+  }
+}

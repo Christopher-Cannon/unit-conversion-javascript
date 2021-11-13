@@ -1,0 +1,27 @@
+@mixin center-block($width, $mgv: auto) {
+  margin: $mgv auto;
+  width: $width;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin mq-min($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin mq-max($max) {
+  @media screen and (max-width: $max - 1px) {
+    @content;
+  }
+}
+
+@mixin mq-min-max($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max - 1px) {
+    @content;
+  }
+}
