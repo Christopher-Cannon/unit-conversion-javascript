@@ -23,6 +23,10 @@ select {
   padding: 0.5rem;
 }
 
+input:focus {
+  border: 1px solid #86c520;
+}
+
 p {
   margin: 0.5rem 0;
 }
