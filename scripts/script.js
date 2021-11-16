@@ -11,6 +11,16 @@ const fahrenheitToKelvin = (fahrenheit) => { return (fahrenheit + 459.67) / 1.8 
 
 const kelvinToFahrenheit = (fahrenheit) => { return fahrenheit * 1.8 - 459.67 };
 
+function validateNumber(input) {
+  if (!input.trim()) return false;
+  
+  input = Number(input.trim());
+
+  if (Number.isNaN(input)) return false;
+
+  return input;
+}
+
 const pageSections = {
   distance: "sectionDistance",
   weight: "sectionWeight",
@@ -18,10 +28,11 @@ const pageSections = {
   temperature: "sectionTemperature"
 };
 
-// Show/hide sections depending on the value entered into the filter input
 const inputFilter = document.querySelector("#inputFilter");
+const inputDistanceMetric = document.querySelector("#distanceMetric");
 
-inputFilter.addEventListener("input", function(event) {
+// Show/hide sections depending on the value entered into the filter input
+inputFilter.addEventListener("input", (event) => {
   let input = event.target.value.toLowerCase();
 
   for (const key in pageSections) {
@@ -32,5 +43,15 @@ inputFilter.addEventListener("input", function(event) {
     } else {
       section.classList.remove("hide");
     }
+  }
+});
+
+inputDistanceMetric.addEventListener("change", (event) => {
+  let input = validateNumber(event.target.value);
+
+  if (input) {
+    console.log("Success: " + input);
+  } else {
+    console.log("Invalid: " + input);
   }
 });
