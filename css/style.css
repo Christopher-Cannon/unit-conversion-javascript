@@ -85,6 +85,11 @@ p {
     flex-direction: column;
   }
 }
+@media screen and (max-width: 1199px) {
+  .page-section select {
+    margin-top: 0.5rem;
+  }
+}
 @media screen and (min-width: 500px) and (max-width: 899px) {
   .page-section {
     margin: 0 auto;
@@ -94,4 +99,12 @@ p {
 
 .hide {
   display: none;
+}
+
+.invalid {
+  background-color: #ffdfdb;
+  border: 1px solid #c53320;
+}
+.invalid:focus {
+  border: 1px solid #c53320;
 }/*# sourceMappingURL=style.css.map */

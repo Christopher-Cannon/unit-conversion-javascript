@@ -77,6 +77,12 @@ p {
     display: flex;
     flex-direction: column;
   }
+
+  @include mq-max($large) {
+    select {
+      margin-top: 0.5rem;
+    }
+  }
   
   @include mq-min-max($small, $medium) {
     @include center-block(60%, 0);
@@ -85,4 +91,14 @@ p {
 
 .hide {
   display: none;
+}
+
+// Invalid input
+.invalid {
+  background-color: colour(error-light);
+  border: 1px solid colour(error);
+
+  &:focus {
+    border: 1px solid colour(error);
+  }
 }

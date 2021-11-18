@@ -1,3 +1,19 @@
+const pageSections = {
+  distance: "sectionDistance",
+  weight: "sectionWeight",
+  speed: "sectionSpeed",
+  temperature: "sectionTemperature"
+};
+const FEET_IN_A_MILE = 5280;
+
+const inputFilter = document.querySelector("#inputFilter");
+
+const inputDistanceMetric = document.querySelector("#distanceMetric");
+const inputDistanceImperial = document.querySelector("#distanceImperial");
+
+const selectDistanceMetric = document.querySelector("#selectDistanceUnitsMetric");
+const selectDistanceImperial = document.querySelector("#selectDistanceUnitsImperial");
+
 // Temperature conversion formula
 const celsiusToFahrenheit = (celsius) => { return celsius * 1.8 + 32 };
 
@@ -11,8 +27,10 @@ const fahrenheitToKelvin = (fahrenheit) => { return (fahrenheit + 459.67) / 1.8 
 
 const kelvinToFahrenheit = (fahrenheit) => { return fahrenheit * 1.8 - 459.67 };
 
+const kilometresToMiles = (kilometres) => { return Number((kilometres * 0.6214).toFixed(4)) };
+
 function validateNumber(input) {
-  if (!input.trim()) return false;
+  if (!input.trim()) return "";
   
   input = Number(input.trim());
 
@@ -21,15 +39,45 @@ function validateNumber(input) {
   return input;
 }
 
-const pageSections = {
-  distance: "sectionDistance",
-  weight: "sectionWeight",
-  speed: "sectionSpeed",
-  temperature: "sectionTemperature"
-};
+function distanceMetric(input) {
+  if (input === "") {
+    inputDistanceMetric.classList.remove("invalid");
+    inputDistanceImperial.value = "";
+  } else if (input) {
+    inputDistanceMetric.classList.remove("invalid");
 
-const inputFilter = document.querySelector("#inputFilter");
-const inputDistanceMetric = document.querySelector("#distanceMetric");
+    // Return a short string describing the conversion operation to carry out
+    conversion = selectDistanceMetric.value + selectDistanceImperial.value;
+
+    switch (conversion) {
+      case "kmmi":
+        inputDistanceImperial.value = kilometresToMiles(input);
+        
+        break;
+
+      case "memi":
+        inputDistanceImperial.value = kilometresToMiles(input / 1000);
+        
+        break;
+
+      case "kmfe":
+        inputDistanceImperial.value = kilometresToMiles(input) * FEET_IN_A_MILE;
+
+        break;
+    
+      case "mefe":
+        inputDistanceImperial.value = kilometresToMiles(input / 1000) * FEET_IN_A_MILE;
+        
+        break;
+    
+      default:
+        break;
+    }
+
+  } else {
+    inputDistanceMetric.classList.add("invalid");
+  }
+}
 
 // Show/hide sections depending on the value entered into the filter input
 inputFilter.addEventListener("input", (event) => {
@@ -46,12 +94,16 @@ inputFilter.addEventListener("input", (event) => {
   }
 });
 
-inputDistanceMetric.addEventListener("change", (event) => {
+inputDistanceMetric.addEventListener("input", (event) => {
   let input = validateNumber(event.target.value);
 
-  if (input) {
-    console.log("Success: " + input);
-  } else {
-    console.log("Invalid: " + input);
-  }
+  distanceMetric(input);
 });
+
+selectDistanceMetric.addEventListener("change", () => {
+  let input = validateNumber(inputDistanceMetric.value);
+
+  distanceMetric(input);
+})
+
+// What to do if imperial dropdown changed? Which input to update?
