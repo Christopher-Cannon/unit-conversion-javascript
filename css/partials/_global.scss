@@ -25,6 +25,10 @@ input:focus {
   border: 1px solid colour(accent);
 }
 
+h2 {
+  margin-bottom: 1rem;
+}
+
 p {
   margin: 0.5rem 0;
 }
@@ -41,10 +45,6 @@ p {
 
   @include mq-max($medium) {
     flex-direction: column;
-    
-    h1 {
-      margin-bottom: 1rem;
-    }
     
     h1, input {
       text-align: center;
@@ -78,9 +78,9 @@ p {
     flex-direction: column;
   }
 
-  @include mq-max($large) {
+  @include mq-max($medium) {
     select {
-      margin-top: 0.5rem;
+      margin: 0.5rem 0 1rem;
     }
   }
   
