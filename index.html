@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,126 +10,32 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
   <header class="page-header">
     <h1>Unit Conversion</h1>
-
-    <input type="text" name="filter" id="inputFilter" placeholder="Filter tools">
   </header>
 
   <section class="page-section">
     <h2>Distance</h2>
 
-    <h3>Metric to Imperial</h3>
-    
-    <input type="text" name="distanceMetric" id="distanceMetric">
-    
-    <select name="selectDistanceUnitsMetric" id="selectDistanceUnitsMetric">
-      <option value="km">Kilometres</option>
-      <option value="me">Metres</option>
-    </select>
-
-    <span>to</span>
-    
-    <select name="selectDistanceUnitsImperial" id="selectDistanceUnitsImperial">
-      <option value="mi">Miles</option>
-      <option value="fe">Feet</option>
-    </select>
-
-    <p>Output</p>
-
-    <h3>Imperial to Metric</h3>
-    
-  </section>
-
-  <section class="page-section" id="sectionDistance">
-    <h2>Distance</h2>
-
-    <p>Metric</p>
-
-    <input type="text" name="distanceMetric" id="distanceMetric">
-
-    <select name="selectDistanceUnitsMetric" id="selectDistanceUnitsMetric">
-      <option value="km">Kilometres</option>
-      <option value="me">Metres</option>
-    </select>
-
-    <p>Imperial</p>
-
-    <input type="text" name="distanceImperial" id="distanceImperial">
-
-    <select name="selectDistanceUnitsImperial" id="selectDistanceUnitsImperial">
-      <option value="mi">Miles</option>
-      <option value="fe">Feet</option>
-    </select>
-  </section>
-
-  <section class="page-section" id="sectionWeight">
-    <h2>Weight</h2>
-
-    <p>Metric</p>
-    
-    <input type="text" name="weightMetric" id="weightMetric">
-    
-    <select name="selectWeightUnitsMetric" id="selectWeightUnitsMetric">
-      <option value="weightKilograms">Kilograms</option>
-      <option value="weightGrams">Grams</option>
-    </select>
-    
-    <p>Imperial</p>
-    
-    <input type="text" name="weightImperial" id="weightImperial">
-    
-    <select name="selectWeightUnitsImperial" id="selectWeightUnitsImperial">
-      <option value="weightPounds">Pounds</option>
-      <option value="weightOunces">Ounces</option>
-    </select>
-  </section>
-
-  <section class="page-section" id="sectionSpeed">
-    <h2>Speed</h2>
-
-    <p>Metric</p>
-    
-    <input type="text" name="speedMetric" id="speedMetric">
-    
-    <select name="selectSpeedUnitsMetric" id="selectSpeedUnitsMetric">
-      <option value="speedKMH">Kilometres per hour</option>
-      <option value="speedMPS">Metres per second</option>
-    </select>
-    
-    <p>Imperial</p>
-    
-    <input type="text" name="speedImperial" id="speedImperial">
-    
-    <select name="selectSpeedUnitsImperial" id="selectSpeedUnitsImperial">
-      <option value="speedMPH">Miles per hour</option>
-      <option value="speedFPS">Feet per second</option>
-    </select>
-  </section>
-
-  <section class="page-section" id="sectionTemperature">
-    <h2>Temperature</h2>
-
-    <p>From</p>
-    
-    <input type="text" name="temperatureInput" id="temperatureInput">
-    
-    <select name="selectTemperatureUnitsInput" id="selectTemperatureUnitsInput">
-      <option value="temperatureCelsius">Celsius</option>
-      <option value="temperatureFahrenheit">Fahrenheit</option>
-      <option value="temperatureKelvin">Kelvin</option>
-    </select>
-    
-    <p>To</p>
-    
-    <input type="text" name="temperatureOutput" id="temperatureOutput" disabled>
-    
-    <select name="selectTemperatureUnitsOutput" id="selectTemperatureUnitsOutput">
-      <option value="temperatureFahrenheit">Fahrenheit</option>
-      <option value="temperatureCelsius">Celsius</option>
-      <option value="temperatureKelvin">Kelvin</option>
-    </select>
-  </section>
+    <div class="conversion-group">
+      <input type="text" name="distanceMe" id="distanceMe">
+  
+      <select name="selDistanceMetricUnits" id="selDistanceMetricUnits">
+        <option value="cm">Centimetres</option>
+        <option value="me">Metres</option>
+        <option value="km">Kilometres</option>
+      </select>
+  
+      <input type="text" name="distanceIm" id="distanceIm">
+  
+      <select name="selDistanceImperialUnits" id="selDistanceImperialUnits">
+        <option value="in">Inches</option>
+        <option value="fe">Feet</option>
+        <option value="mi">Miles</option>
+      </select>
+    </section>
+    </div>
 </body>
 </html>

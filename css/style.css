@@ -22,80 +22,41 @@ select {
   outline: none;
   padding: 0.5rem;
 }
-
-input:focus {
-  border: 1px solid #86c520;
-}
-
-h2 {
-  margin-bottom: 1rem;
-}
-
-p {
-  margin: 0.5rem 0;
-}
-
-.page-header {
-  border-bottom: 2px solid #1a1a1a;
-  display: flex;
-}
-@media screen and (min-width: 500px) and (max-width: 899px) {
-  .page-header input {
-    margin: 0 auto;
-    width: 60%;
+@media screen and (max-width: 944px) {
+  input,
+select {
+    margin: 0.5rem 0;
+    width: 50%;
   }
 }
-@media screen and (max-width: 899px) {
-  .page-header {
-    flex-direction: column;
-  }
-  .page-header h1, .page-header input {
-    text-align: center;
-  }
-}
-@media screen and (min-width: 900px) {
-  .page-header {
-    margin: 0 auto;
-    width: 860px;
-    justify-content: space-between;
-    align-items: center;
+
+@media screen and (min-width: 945px) {
+  input {
+    flex: 1;
   }
 }
 
 .page-header,
 .page-section {
-  padding: 1rem 0;
+  margin: auto;
+  width: 95%;
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 945px) {
   .page-header,
 .page-section {
-    margin: 0 auto;
-    width: 860px;
-  }
-}
-@media screen and (max-width: 499px) {
-  .page-header,
-.page-section {
-    margin: auto 1rem;
+    width: 900px;
   }
 }
 
-@media screen and (max-width: 899px) {
-  .page-section {
-    display: flex;
-    flex-direction: column;
-  }
+.page-header {
+  border-bottom: 2px solid black;
+  margin: 0 auto 1rem;
+  padding: 1rem 0;
 }
-@media screen and (max-width: 899px) {
-  .page-section select {
-    margin: 0.5rem 0 1rem;
-  }
-}
-@media screen and (min-width: 500px) and (max-width: 899px) {
-  .page-section {
-    margin: 0 auto;
-    width: 60%;
-  }
+
+.conversion-group {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .hide {
